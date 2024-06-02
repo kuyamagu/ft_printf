@@ -13,17 +13,13 @@ CFLAGS = -Wall -Wextra -Werror
 %.o:%.c
 	cc $(CFLAGS) -c $< -o $@
 
-LIBFT_PATH = ./Libft
+LIBFT_PATH = ./libft
 LIBFT_NAME = libft.a
 
 $(NAME) : $(OBJS)
 	make -C	$(LIBFT_PATH)	all
 	cp	$(LIBFT_PATH)/$(LIBFT_NAME)	$(NAME)
 	$(AR)	$(NAME)	$(OBJS)
-
-
-# $(NAME): $(OBJS)
-# 	$(AR) $(NAME) $(OBJS)
 
 all: $(NAME)
 

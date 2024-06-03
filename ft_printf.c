@@ -6,21 +6,23 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 22:13:38 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/06/02 22:15:33 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/06/03 21:10:13 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int	ft_write_char(unsigned char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
 int	ft_function_convert(const char *str, va_list args, int count_num, int i)
 {
-	const char	*upper_base;
-	const char	*lower_base;
 	int			count;
 
 	count = 0;
-	upper_base = "0123456789ABCDEF";
-	lower_base = "0123456789abcdef";
 	if (str[i] == 'c')
 		count_num += ft_write_char(va_arg(args, int));
 	if (str[i] == 's')
@@ -34,10 +36,10 @@ int	ft_function_convert(const char *str, va_list args, int count_num, int i)
 	if (str[i] == 'u')
 		count_num += ft_putnbr_unsigned(va_arg(args, int), 1, &count);
 	if (str[i] == 'X')
-		count_num += ft_putnbr_base(va_arg(args, unsigned int), upper_base,
+		count_num += ft_putnbr_base(va_arg(args, unsigned int), UPPER_BASE,
 				&count);
 	if (str[i] == 'x')
-		count_num += ft_putnbr_base(va_arg(args, unsigned int), lower_base,
+		count_num += ft_putnbr_base(va_arg(args, unsigned int), LOWER_BASE,
 				&count);
 	if (str[i] == '%')
 		count_num += ft_write_char('%');

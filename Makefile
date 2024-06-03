@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/03 21:14:08 by kuyamagu          #+#    #+#              #
+#    Updated: 2024/06/03 21:21:56 by kuyamagu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS = ft_printf.c ft_convert.c
 
 OBJS = $(SRCS:.c=.o)
@@ -25,9 +37,11 @@ all: $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
+	make -C $(LIBFT_PATH)	clean
 
 fclean: clean
 	$(RM) $(NAME)
+	make -C $(LIBFT_PATH)	fclean
 
 re: fclean all
 

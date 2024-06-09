@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 05:37:24 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/06/03 21:10:09 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:39:51 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,10 @@ int	ft_putnbr_base(unsigned long long convert, const char *radix, int *count)
 int	ft_write_pointer(unsigned long long pointer)
 {
 	int			count;
-	const char	*lower_base;
 
-	lower_base = "0123456789abcdef";
 	count = 2;
 	write(1, "0x", 2);
-	return (ft_putnbr_base(pointer, lower_base, &count));
+	return (ft_putnbr_base(pointer, LOWER_BASE, &count));
 }
 
 int	ft_putnbr_count(int n, int fd, int *count)

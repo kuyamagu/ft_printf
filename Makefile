@@ -6,7 +6,7 @@
 #    By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 21:14:08 by kuyamagu          #+#    #+#              #
-#    Updated: 2024/06/03 21:21:56 by kuyamagu         ###   ########.fr        #
+#    Updated: 2024/06/09 20:36:54 by kuyamagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ all: $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
-	make -C $(LIBFT_PATH)	clean
+	make -C $(LIBFT_PATH)	fclean
 
 fclean: clean
 	$(RM) $(NAME)

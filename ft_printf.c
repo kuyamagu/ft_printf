@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 22:13:38 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/06/03 21:10:13 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/06/09 17:10:33 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	ft_function_convert(const char *str, va_list args, int count_num, int i)
 	if (str[i] == 'd')
 		count_num += ft_putnbr_count(va_arg(args, int), 1, &count);
 	if (str[i] == 'i')
-		count_num += ft_putnbr_count(va_arg(args, unsigned int), 1, &count);
+		count_num += ft_putnbr_count(va_arg(args, int), 1, &count);
 	if (str[i] == 'u')
-		count_num += ft_putnbr_unsigned(va_arg(args, int), 1, &count);
+		count_num += ft_putnbr_unsigned(va_arg(args, unsigned int), 1, &count);
 	if (str[i] == 'X')
 		count_num += ft_putnbr_base(va_arg(args, unsigned int), UPPER_BASE,
 				&count);
